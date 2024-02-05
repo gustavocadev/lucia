@@ -6,10 +6,10 @@ title: "Tutorial: Username and password auth in Next.js Pages router"
 
 Before starting, make sure you've set up your database and middleware as described in the [Getting started](/getting-started/nextjs-pages) page.
 
-An [example project](https://github.com/lucia-auth/examples/tree/v3/nextjs-pages/username-and-password) based on this tutorial is also available. You can clone the example locally or [open it in StackBlitz](https://stackblitz.com/github/lucia-auth/examples/tree/v3/nextjs-pages/username-and-password).
+An [example project](https://github.com/lucia-auth/examples/tree/main/nextjs-pages/username-and-password) based on this tutorial is also available. You can clone the example locally or [open it in StackBlitz](https://stackblitz.com/github/lucia-auth/examples/tree/v3/nextjs-pages/username-and-password).
 
 ```
-npx degit https://github.com/lucia-auth/examples/tree/v3/nextjs-pages/username-and-password <directory_name>
+npx degit https://github.com/lucia-auth/examples/tree/main/nextjs-pages/username-and-password <directory_name>
 ```
 
 ## Update database
@@ -273,7 +273,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
 ## Validate requests
 
-Create `validateRequest()`. This will check for the session cookie, validate it, and set a new cookie if necessary. To learn more, see the [Validating requests](/basics/validate-session-cookies/nextjs-pages) page.
+Create `validateRequest()`. This will check for the session cookie, validate it, and set a new cookie if necessary. To learn more, see the [Validating requests](/guides/validate-session-cookies/nextjs-pages) page.
 
 CSRF protection should be implemented and you should already have a middleware for it.
 

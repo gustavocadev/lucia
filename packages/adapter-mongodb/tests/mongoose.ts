@@ -52,8 +52,8 @@ const Session = mongoose.model(
 );
 
 const adapter = new MongodbAdapter(
-	mongoose.connection.collection("sessions"),
-	mongoose.connection.collection("users")
+	mongoose.connection.collection("sessions") as any,
+	mongoose.connection.collection("users") as any
 );
 
 await User.deleteMany();
@@ -70,3 +70,11 @@ await User.deleteMany();
 await Session.deleteMany();
 
 process.exit(0);
+
+declare module "lucia" {
+	interface Register {
+		DatabaseUserAttributes: {
+			username: string;
+		};
+	}
+}

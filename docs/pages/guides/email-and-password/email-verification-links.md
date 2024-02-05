@@ -32,10 +32,10 @@ export const lucia = new Lucia(adapter, {
 declare module "lucia" {
 	interface Register {
 		Lucia: typeof lucia;
-	}
-	interface DatabaseUserAttributes {
-		email: string;
-		email_verified: boolean;
+		DatabaseUserAttributes: {
+			email: string;
+			email_verified: boolean;
+		};
 	}
 }
 ```
@@ -126,7 +126,9 @@ app.get("email-verification/:token", async () => {
 		.table("email_verification_token")
 		.where("id", "=", verificationToken)
 		.get();
-	await db.table("email_verification_token").where("id", "=", verificationToken).delete();
+	if (token) {
+		await db.table("email_verification_token").where("id", "=", token.id).delete();
+	}
 	await db.commit();
 
 	if (!token || !isWithinExpiration(token.expires_at)) {

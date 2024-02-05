@@ -178,9 +178,27 @@ Refer to these guides:
 - [Upgrade OAuth setup to v3](/upgrade-v3/oauth)
 - [Upgrade Password-based auth to v3](/upgrade-v3/password)
 
-## Next.js
+## Framework specific configuration
 
-If you installed Oslo, mark its dependencies as external to prevent it from getting bundled. This is only required when using the `oslo/password` module.
+If you installed Oslo, you must prevent `oslo` from getting bundled. This is only required when using the `oslo/password` module.
+
+### Astro
+
+```ts
+// astro.config.mjs
+export default defineConfig({
+	// ...
+	vite: {
+		optimizeDeps: {
+			exclude: ["oslo"]
+		}
+	}
+});
+```
+
+### Next.js
+
+**`oslo/password` does NOT work with Turbopack.**
 
 ```ts
 // next.config.ts

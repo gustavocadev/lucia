@@ -43,7 +43,7 @@ declare module "lucia" {
 
 We recommend setting up a handle hook to validate requests. The validated user will be available as `local.user`.
 
-If you're curious about what's happening here, see the [Validating requests](/basics/validate-session-cookies/sveltekit) page.
+If you're curious about what's happening here, see the [Validating requests](/guides/validate-session-cookies/sveltekit) page.
 
 ```ts
 // src/hooks.server.ts
@@ -99,6 +99,6 @@ export {};
 
 ## Next steps
 
-You can learn all the concepts and APIs by reading the [Basics section](/basics/sessions) in the docs. If you prefer writing code immediately, check out the [Tutorials](/tutorials) page or the [examples repository](https://github.com/lucia-auth/examples/tree/v3).
+You can learn all the concepts and APIs by reading the [Basics section](/basics/sessions) in the docs. If you prefer writing code immediately, check out the [Tutorials](/tutorials) page or the [examples repository](https://github.com/lucia-auth/examples/tree/main).
 
 If you have any questions, [join our Discord server](https://discord.com/invite/PwrK3kpVR3)!
